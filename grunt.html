@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Researching Yeoman | Grunt</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="css/site.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/grunt.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <nav>
+          <ul id="main-nav" class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="yo.html">Yo</a></li>
+            <li><a href="bower.html">Bower</a></li>
+            <li><a href="grunt.html">Grunt</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div id="main-content">
+        <!-- Side Navigation for Section Elements of Article -->
+        <nav class="sidebar">
+          <!-- Dynamically Generate Section list with JavaScript -->
+          <ul id="side-nav" class="nav">
+            <li><a href="#">Deploying with Grunt</a></li>
+            <li><a href="#">Grunt Build</a></li>
+            <li><a href="#">Grunt Server</a></li>
+            <li><a href="#">Grunt Test</a></li>
+            <li><a href="#">Additional Resources</a></li>
+          </ul>
+        </nav>
+        <!-- End .sidebar -->
+        <!-- Main Article -->
+        <article>
+          <header>
+            <h1 id="article-title">Deploying with Grunt</h1>
+            <p>
+              Grunt is a powerful automation tool for web development. It can
+              compile, minify, unit test, and lint your assets and be customized
+              with other tasks helpful in your specific workflow and development
+              style.
+            </p>
+            <p>
+              Grunt tasks are defined in the <code>Gruntfile.js</code>.  Yeoman
+              comes pre-defined with several tasks that are very important in 
+              Yeoman workflow: (a) Grunt Build, (b) Grunt Server, and (c) Grunt
+              Test.
+            </p>
+          </header>
+
+          <section>
+            <header>
+              <h2>Grunt Build</h2>
+            </header>
+            <p>
+              The Build task is a super-task which triggers several other sub-tasks
+              such as <code>clean</code>, <code>cssmin</code>, <code>uglify</code>,
+              <code>copy</code>, <code>htmlmin</code>, etc.  You can see all the 
+              tasks that <code>build</code> triggers by checking your Gruntfile.js.
+              The following is a section from a default Gruntfile.js:
+            </p>
+            <pre>
+              grunt.registerTask('build', [
+                  'clean:dist',
+                  'useminPrepare',
+                  'concurrent:dist',
+                  'autoprefixer',
+                  'concat',
+                  'cssmin',
+                  'uglify',
+                  'copy:dist',
+                  'rev',
+                  'usemin',
+                  'htmlmin'
+              ]); 
+            </pre>
+            <p>
+              In essence, the <code>grunt build</code> command will clean up your
+              directories, minify and concatentate assets (HTML, CSS, JS, Images),
+              and rename and move generated files to the <code>dist/</code> 
+              directory.
+            </p>
+          </section>
+
+          <section>
+            <header>
+              <h2>Grunt Server</h2>
+            </header>
+            <p>
+              Yeoman pulls in a handy grunt task <code>grunt serve</code> which
+              will actually fire up a development server so you can run your code
+              in a web browser.  The following is a snippet from a default
+              Gruntfile.js showing the <code>serve</code> task.
+            </p>
+            <pre>
+              grunt.registerTask('serve', function (target) {
+                  if (target === 'dist') {
+                      return grunt.task.run(['build', 'connect:dist:keepalive']);
+                  }
+
+                  grunt.task.run([
+                      'clean:server',
+                      'concurrent:server',
+                      'autoprefixer',
+                      'connect:livereload',
+                      'watch'
+                  ]);
+              });
+            </pre>
+            <p>
+              A handy part of the Grunt server is that it will watch and reload
+              any assets that you edit.
+            </p>
+          </section>
+          
+          <section>
+            <header>
+              <h2>Grunt Test</h2>
+            </header>
+            <p>
+              Testing your code is an important step in creating code safe for
+              production.  Yeoman comes with a task that will run tests for your
+              dependencies and custom code: <code>grunt test</code>.
+            </p>
+            <p>
+              Unit tests are defined in <code>test/spec/test.js</code>.  Grunt
+              uses Mocha and Chai.js as its testing system (which you can see
+              in <code>test/lib/</code>).  The following is a snippet from the 
+              <code>test.js</code> file:
+            </p>
+            <pre>
+              /*global describe, it */
+              'use strict';
+              (function () {
+                  describe('Give it some context', function () {
+                      describe('maybe a bit more context here', function () {
+                          it('should run here few assertions', function () {
+
+                          });
+                      });
+                  }); 
+              })();
+            </pre>
+            <p>
+              Read up on Mocha and Chai.js to learn more about writing JavaScript
+              unit tests.
+            </p>
+          </section>
+
+          <footer>
+            <h4>Additional Resources</h4>
+            <ul>
+              <li>
+                <a href="http://net.tutsplus.com/tutorials/javascript-ajax/building-apps-with-the-yeoman-workflow/">
+                  NetTuts Tutorial: Building Apps with the Yeoman Workflow
+                </a>
+              </li>
+            </ul>
+          </footer>
+        </article>
+        <!-- End Main Article -->
+      </div>  
+      <!-- #main-content -->
+    </div>  
+    <!-- #wrapper -->
+  </body>
+</html>

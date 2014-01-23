@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Researching Yeoman | Bower</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="css/site.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/bower.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <nav>
+          <ul id="main-nav" class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="yo.html">Yo</a></li>
+            <li><a href="bower.html">Bower</a></li>
+            <li><a href="grunt.html">Grunt</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="main-content">
+        <!-- Side Navigation for Section Elements of Article -->
+        <nav class="sidebar">
+          <!-- Dynamically Generate Section list with JavaScript -->
+          <ul id="side-nav" class="nav">
+            <li><a href="#">Managing Dependencies with Bower</a></li>
+            <li><a href="#">Searching Packages</a></li>
+            <li><a href="#">Installing and Updating Dependencies</a></li>
+          </ul>
+        </nav>
+        <!-- End .sidebar -->
+        <!-- Main Article -->
+        <article>
+          <header>
+            <h1 id="article-title">Managing Dependencies with Bower</h1>
+            <p>
+              Bower automates the task of finding, downloading, and updating
+              web assets like JavaScript libraries, CSS stylesheets, or hosted
+              images.
+            </p>
+          </header>
+
+          <section>
+            <header>
+              <h2>Searching Packages</h2>
+            </header>
+            <p>
+              Search the bower registry with the following commands:
+            </p>
+            <pre class="terminal code">
+              # search for a dependency by name
+              bower search _name_
+
+              # list all packages in bower registry
+              bower search
+            </pre>
+          </section>
+
+          <section>
+            <header>
+              <h2>Installing and Updating Dependencies</h2>
+            </header>
+            <p>
+              The power of bower comes from automatically installing and updating
+              assets.  It saves you from needing to go manually download, unzip,
+              copy into resource directory, and point your site to it.  Bower can
+              inject your new dependencies right into your pages and even register
+              packages with tools like RequireJS.
+            </p>
+            <pre>
+              # install one or more dependencies
+              bower install _name_ _name2_
+
+              # update a dependency
+              bower update _name_
+
+              # remove a dependency
+              bower uninstall _name_
+            </pre>
+          </section>
+          
+          <footer>
+          </footer>
+        </article>
+        <!-- End Main Article -->
+      </div>  
+      <!-- #main-content -->
+    </div>  
+    <!-- #wrapper -->
+  </body>
+</html>

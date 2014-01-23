@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Researching Yeoman | Yo</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="css/site.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/yo.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <nav>
+          <ul id="main-nav" class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="yo.html">Yo</a></li>
+            <li><a href="bower.html">Bower</a></li>
+            <li><a href="grunt.html">Grunt</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="main-content">
+        <!-- Side Navigation for Section Elements of Article -->
+        <nav class="sidebar">
+          <!-- Dynamically Generate Section list with JavaScript -->
+          <ul id="side-nav" class="nav">
+            <li><a href="#">Scaffolding Projects with Yo</a></li>
+            <li><a href="#">Using the Webapp Generator</a></li>
+            <li><a href="#">Finding Community Generators</a></li>
+            <li><a href="#">Additional Resources</a></li>
+          </ul>
+        </nav>
+        <!-- End .sidebar -->
+        <!-- Main Article -->
+        <article>
+          <header>
+            <h1 id="article-title">Scaffolding Projects with Yo</h1>
+            <p>
+              The major contribution of the Yeoman project is the <code>yo</code>
+              script which scaffolds out new projects and coordinates the 
+              configuration of our other tools Bower and Grunt.  Yo accomplishes
+              its work by using scaffolding formulas called "generators" which
+              dictate the directories and config files to create.  You can find
+              special generators for general webapps, Ruby on Rails, Django, 
+              AngularJS, Backbone.js, Ember.js, Jekyll, and many more.
+            </p>
+          </header>
+
+          <section>
+            <header>
+              <h2>Using the Webapp Generator</h2>
+            </header>
+            <p>
+              Get started by installing and using the <code>generator-webapp</code>
+              with the following code in your terminal:
+            </p>
+            <pre class="code terminal">
+              # install webapp generator for yo
+              npm install -g generator-webapp
+
+              # create a folder for your project
+              mkdir myproject
+              cd myproject
+
+              # use webapp generator to scaffold your project
+              yo webapp
+            </pre>
+            <p>
+              This will scaffold a new web application in your <code>myproject/</code>
+              directory.  When you first run <code>yo webapp</code> you will be
+              greeted by the Yeoman himself and asked to choose from a list of
+              libraries you might want to include like SASS, Twitter Bootstrap, 
+              or Modernizr.  Below is a screenshot of the Yeoman:
+            </p>
+            <img src="img/yo_webapp_generator.png" />
+            <p>
+              In the background, Yo will just setup and run Bower
+              for the extra dependencies.
+            </p>
+              
+          </section>
+
+          <section>
+            <header>
+              <h2>Finding Community Generators</h2>
+            </header>
+            <p>
+              To find generators built by the community, you can consult the
+              official list by Yeoman at the folling site: 
+              <a href="http://yeoman.io/community-generators.html">
+                http://yeoman.io/community-generators.html
+              </a>
+            </p>
+            <p>
+              You can also explore the npm packages and search for ones containing
+              "generator" or "yeoman" at the npm registry: 
+              <a href="https://npmjs.org/">https://npmjs.org/</a>
+              <br>
+              Alternatively, you can use the npm search command:
+              <pre>
+                npm search yeoman
+              </pre>
+            </p>
+          </section>
+          
+          <footer>
+            <h4>Additional Resources</h4>
+            <ul>
+              <li>Yeoman Community Generators
+                <a href="http://yeoman.io/community-generators.html">
+                  http://yeoman.io/community-generators.html
+                </a>
+              </li>
+              <li>npm package list: 
+                <a href="https://npmjs.org/">https://npmjs.org/</a>
+              </li>
+            </ul>
+          </footer>
+        </article>
+        <!-- End Main Article -->
+      </div>  
+      <!-- #main-content -->
+    </div>  
+    <!-- #wrapper -->
+  </body>
+</html>

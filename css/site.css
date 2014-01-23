@@ -1,0 +1,99 @@
+/*
+*  Project 1 | Site-wide CSS Stylesheet
+*
+*  @author: Tommy Groshong
+*  @since: January 2014
+*
+*/
+
+/**********************************
+* General
+***********************************/
+header, footer, nav, article { display: block; }
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+abbr {
+    border-bottom: 1px dotted black;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    /* background-color: #ccc; */
+    /* color: green; */
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+}
+
+/**********************************
+* Navigation
+***********************************/
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+}
+
+#main-nav li {
+    float: left;
+}
+
+.nav li{
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.nav li:hover {
+    background-color: #efefef;
+}
+
+.nav a {
+    display: block;
+}
+
+.nav a:hover {
+    color: darkblue;
+}
+
+#side-nav {
+    float:left;
+}
+
+#side-nav li{
+    padding-left: 10px;
+}
+
+
+/**********************************
+* Content
+***********************************/
+
+#main-content{
+    position: relative;
+    margin-top: 50px;
+}
+
+.sidebar{
+    max-width: 30%;
+    float: left;
+}
+
+article {
+    max-width: 50%;
+    float: left;
+    margin-left: 50px;
+}

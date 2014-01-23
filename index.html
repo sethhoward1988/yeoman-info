@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Researching Yeoman | Home</title>
+    <link href="css/site.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/home.css" rel="stylesheet" type="text/css" media="all">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <nav>
+          <ul id="main-nav" class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="yo.html">Yo</a></li>
+            <li><a href="bower.html">Bower</a></li>
+            <li><a href="grunt.html">Grunt</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="main-content">
+        <!-- Side Navigation for Section Elements of Article -->
+        <nav class="sidebar">
+          <!-- Dynamically Generate list with JavaScript -->
+          <!-- Placeholder for now -->
+          <ul id="side-nav" class="nav">
+            <li><a href="index.html#article-title">What is Yeoman?</a></li>
+            <li><a href="index.html#yo-section">Yo Scaffolding</a></li>
+            <li><a href="index.html#bower-section">Bower Dependencies</a></li>
+            <li><a href="index.html#grunt-section">Grunt Deploy</a></li>
+            <li><a href="index.html#end-section">Now What?</a></li>
+            <li><a href="index.html#article-footer">Additional Resources</a></li>
+          </ul>
+        </nav>
+        <!-- End .sidebar -->
+        <!-- Main Article -->
+        <article>
+          <header>
+            <h1 id="article-title">Discovering Yeoman</h1>
+            <p>
+              Yeoman is a command-line tool that helps web developers work efficiently
+              by automating workflow processes.  Yeoman is actually a package of 
+              several tools: Yo, Bower, and Grunt which respectively (a) scaffold 
+              project layouts, (b) manage dependencies, and (c) automate the 
+              build/deploy process.
+            </p>
+            <p>
+              This article will briefly introduce the three components of Yeoman.  
+              Additional information on each individual tool can be found on the 
+              other pages of this site.
+            </p>
+          </header>
+
+          <section id="yo-section">
+            <header>
+              <h2>Yo Scaffolding</h2>
+            </header>
+            <p>
+              Scaffolding is handled by a command-line script called <code>yo</code>.
+              It is unique to the Yeoman project and is installed using 
+              <abbr title="Node Package Manager"><code>npm</code></abbr>.  The 
+              following code with install <code>yo</code> with all its components:
+            </p>
+            <pre class="code terminal">
+              $ npm install -g yo
+            </pre>
+            <p>
+              With Yo you can scaffold out a folder structure for an entire project or generate
+              specific files from defined templates.
+            </p>
+            <p>
+              Yo operates on pre-defined templates called <em>generators</em>. A
+              generator is installed using <code>npm</code> or by writing one
+              yourself.  The following are some useful generators in the 
+              <a href="http://yeoman.io/community-generators.html">Yeoman community</a>:
+              <ul>
+                <li>webapp</li>
+                <li>angular</li>
+                <li>wordpress</li>
+                <li>backbone</li>
+                <li>ember</li>
+              </ul>
+            </p>
+          </section>
+
+          <section id="bower-section">
+            <header>
+              <h2>Bower Dependencies</h2>
+            </header>
+            <p>
+              <a href="http://bower.io/">Bower</a> is an open-source package 
+              manager for web resources.  It can manage assets such as JavaScript,
+              CSS, and Images.  Bower has many of the capabilities found in a 
+              package manager such as searching, installing, listing, updating, 
+              and uninstalling assets.  The following snippets show bower in 
+              action:
+            </p>
+            <pre class="code terminal">
+              # Search for a dependency in the Bower registry.
+              bower search dep
+
+              # Install one or more dependencies.
+              bower install dep depN
+
+              # List out the dependencies you have installed for a project.
+              bower list
+
+              # Update a dependency to the latest version available.
+              bower update dep
+            </pre>
+          </section>
+          
+          <section id="grunt-section">
+            <header>
+              <h2>Grunt Deploy</h2>
+            </header>
+            <p>
+              <a href="http://gruntjs.com/">Grunt</a> handles the building and 
+              deploying of your project but it is capable of much more.  Grunt
+              is a JavaScript task runner and can handle pretty much any kind
+              of automation including running unit tests, compiling CSS 
+              pre-processors (e.g. SASS or LESS), compiling CoffeeScript, 
+              minifiying static assets, or previewing your app on a dev server.
+            </p>
+          </section>
+
+          <section id="end-section">
+            <header>
+              <h2>Now What?</h2>
+            </header>
+            <p>
+              Hopefully this article has gotten you excited about exploring the
+              possibilities available by including Yeoman in your development
+              workflow.  If you want to learn more about one of the three
+              components of Yeoman, explore the navigation bar at the top of the
+              page.
+            </p>
+          </section>
+
+          <footer id="article-footer">
+            <h4>Additional Resources</h4>
+            <ul>
+              <li><a href="http://yeoman.io">Yeoman.io</a></li>
+              <li><a href="http://bower.io">Bower.io</a></li>
+              <li><a href="http://gruntjs.com">Gruntjs.com</a></li>
+              <li>
+                <a href="http://yeoman.io/community-generators.html">
+                  Yo Community Generators
+                </a>
+              </li>
+              <li>
+                <a href="http://yeoman.io/generators.html#frequently-asked-questions">
+                  Yeoman FAQ
+                </a>
+              </li>
+            </ul>
+          </footer>
+        </article>
+        <!-- End Main Article -->
+
+      </div>
+      <!-- End #main-content -->
+    </div>
+    <!-- End #wrapper -->
+  </body>
+</html>
